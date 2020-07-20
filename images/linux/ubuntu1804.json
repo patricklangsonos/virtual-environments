@@ -24,9 +24,7 @@
         "image_version": "dev",
         "image_os": "ubuntu18",
         "run_validation_diskspace": "false",
-        "ssh_fullname": "vagrant",
-        "ssh_password": "vagrant",
-        "ssh_username": "vagrant"
+        "boot_command_prefix": "<wait20><enter><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>"
     },
     "builders": [
         {
@@ -63,29 +61,37 @@
             "disk_size": "86000M",
             "headless": true,
             "boot_command": [
-                "{{ user `boot_command_prefix` }}",
-                "/install/vmlinuz noapic ",
-                "initrd=/install/initrd.gz ",
-                "file=/floppy/{{ user `preseed` }} ",
-                "debian-installer={{ user `locale` }} auto locale={{ user `locale` }} kbd-chooser/method=us ",
-                "hostname={{ user `hostname` }} ",
-                "grub-installer/bootdev=/dev/sda<wait> ",
-                "fb=false debconf/frontend=noninteractive ",
-                "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
-                "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
-                "passwd/user-fullname={{ user `ssh_fullname` }} ",
-                "passwd/user-password={{ user `ssh_password` }} ",
-                "passwd/user-password-again={{ user `ssh_password` }} ",
-                "passwd/username={{ user `ssh_username` }} ",
-                "-- <enter>"
-            ],
-            "floppy_files": [
-                "http/preseed.cfg"
-            ],
+                "<esc><wait>",
+                "<esc><wait>",
+                "<enter><wait>",
+                "/install/vmlinuz<wait>",
+                " auto<wait>",
+                " console-setup/ask_detect=false<wait>",
+                " console-setup/layoutcode=us<wait>",
+                " console-setup/modelcode=pc105<wait>",
+                " debconf/frontend=noninteractive<wait>",
+                " debian-installer=en_US<wait>",
+                " fb=false<wait>",
+                " initrd=/install/initrd.gz<wait>",
+                " kbd-chooser/method=us<wait>",
+                " keyboard-configuration/layout=USA<wait>",
+                " keyboard-configuration/variant=USA<wait>",
+                " locale=en_US<wait>",
+                " netcfg/get_domain=vm<wait>",
+                " netcfg/get_hostname=vagrant<wait>",
+                " grub-installer/bootdev=/dev/sda<wait>",
+                " noapic<wait>",
+                " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<wait>",
+                " -- <wait>",
+                "<enter><wait>"
+              ],
+            "boot_wait": "10s",
+            "http_directory": "http",
+            "ssh_username": "vagrant",
+            "ssh_password": "vagrant",
             "vm_name": "ubuntu1804",
-            "iso_url": "http://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-live-server-amd64.iso",
-            "iso_checksum": "73b8d860e421000a6e35fdefbb0ec859b9385b0974cf8089f5d70a87de72f6b9",
-            "ssh_username": "root"
+            "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.4-server-amd64.iso",
+            "iso_checksum": "sha256:e2ecdace33c939527cbc9e8d23576381c493b071107207d2040af72595f8990b"
         }
     ],
     "provisioners": [

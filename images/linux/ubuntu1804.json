@@ -23,10 +23,8 @@
         "capture_name_prefix": "packer",
         "image_version": "dev",
         "image_os": "ubuntu18",
-        "github_feed_token": null,
         "run_validation_diskspace": "false"
     },
-    "sensitive-variables": ["client_secret", "github_feed_token"],
     "builders": [
         {
             "type": "azure-arm",
@@ -51,6 +49,18 @@
             "image_offer": "UbuntuServer",
             "image_sku": "18.04-LTS",
             "os_disk_size_gb": "86"
+        },
+        {
+            "type": "qemu",
+            "accelerator": "kvm",
+            "net_device": "virtio-net",
+            "disk_interface": "virtio",
+            "cpus": "4",
+            "memory": "8000",
+            "disk_size": "86000M",
+            "iso_url": "http://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-live-server-amd64.iso",
+            "iso_checksum": "73b8d860e421000a6e35fdefbb0ec859b9385b0974cf8089f5d70a87de72f6b9",
+            "ssh_username": "root"
         }
     ],
     "provisioners": [

@@ -31,3 +31,11 @@ If things appear to be stuck, look at the logs for the VNC port. Connect with yo
     qemu: view the screen of the VM, connect via VNC without a password to
     qemu: vnc://127.0.0.1:5937
 ```
+
+
+
+## References
+
+- Boot command and preseed.cfg from https://github.com/geerlingguy/packer-boxes/blob/master/ubuntu1804/box-config.json
+- Worked around sudo prompt issue based on https://stackoverflow.com/questions/31788902/packer-build-fails-due-to-tty-needed-for-sudo
+- Packer QEmu builder docs https://www.packer.io/docs/builders/qemu

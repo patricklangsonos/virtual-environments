@@ -10,8 +10,8 @@ source $HELPER_SCRIPTS/os.sh
 
 # ppa:ansible/ansible doesn't contain packages for Ubuntu20.04
 if isUbuntu16 || isUbuntu18 ; then
-    add-apt-repository ppa:ansible/ansible
-    apt-get update
+    add-apt-repository ppa:ansible/ansible -y
+    apt-get update -y
 fi
 
 # Install latest Ansible

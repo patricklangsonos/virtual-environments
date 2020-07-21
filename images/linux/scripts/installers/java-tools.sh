@@ -18,7 +18,7 @@ if isUbuntu16 || isUbuntu18 ; then
     # Install GPG Key for Azul Open JDK. See https://www.azul.com/downloads/azure-only/zulu/
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
     apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main"
-    apt-get update
+    apt-get update -y
     apt-get -y install zulu-7-azure-jdk=\*
     # Open JDP Adopt does not exist for Ubuntu 20
     apt-get -y install adoptopenjdk-12-hotspot=\*

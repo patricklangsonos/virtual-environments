@@ -23,9 +23,10 @@
         "capture_name_prefix": "packer",
         "image_version": "dev",
         "image_os": "ubuntu18",
-        "run_validation_diskspace": "false",
-        "boot_command_prefix": "<wait20><enter><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>"
+        "github_feed_token": null,
+        "run_validation_diskspace": "false"
     },
+    "sensitive-variables": ["client_secret", "github_feed_token"],
     "builders": [
         {
             "type": "azure-arm",

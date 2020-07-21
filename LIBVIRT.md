@@ -13,11 +13,11 @@
 ## Building
 
 ```
-$ packer build --only=qemu ubuntu1804.json
+$ packer build --only=qemu --var 'github_feed_token=...' ubuntu1804.json
 
 # Or if you're debugging
 
-$ PACKER_LOG=1 packer build --only=qemu ubuntu1804.json
+$ PACKER_LOG=1 packer build --only=qemu --var 'github_feed_token=...' ubuntu1804.json
 ```
 
 
@@ -39,3 +39,8 @@ If things appear to be stuck, look at the logs for the VNC port. Connect with yo
 - Boot command and preseed.cfg from https://github.com/geerlingguy/packer-boxes/blob/master/ubuntu1804/box-config.json
 - Worked around sudo prompt issue based on https://stackoverflow.com/questions/31788902/packer-build-fails-due-to-tty-needed-for-sudo
 - Packer QEmu builder docs https://www.packer.io/docs/builders/qemu
+
+
+## Similar Works
+
+- This offers a builder for Docker and Packer on AWS: https://github.com/terradatum/github-runner . It has some interesting tools to merge JSON files that may be helpful too.

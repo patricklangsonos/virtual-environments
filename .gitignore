@@ -291,6 +291,8 @@ __pycache__/
 InstalledSoftware.md
 packer_cache
 output-qemu
+box
+*.box
 
 # Desktop Service Store
 .DS_Store

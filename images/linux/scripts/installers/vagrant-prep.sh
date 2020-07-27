@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# Hack - when you bring this up in Vagrant the interface name will increment
-cat <<EOF >> /etc/netplan/01-netcfg.yaml
+
+# Hypervisor-specific fixes
+
+case "$PACKER_BUILDER_TYPE" in
+  qemu)
+  # Hack - when you bring this up in Vagrant the interface name will increment
+  cat <<EOF >> /etc/netplan/01-netcfg.yaml
     ens5:
       dhcp4: yes
     ens6:
@@ -9,6 +14,9 @@ cat <<EOF >> /etc/netplan/01-netcfg.yaml
     ens7:
       dhcp4: yes
 EOF
+;;
+esac
+
 
 
 # Add SSH insecure key for Vagrant user

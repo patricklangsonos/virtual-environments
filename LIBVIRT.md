@@ -36,20 +36,11 @@ If things appear to be stuck, look at the logs for the VNC port. Connect with yo
 
 ## Using this with Vagrant + libvirt
 
-If you want to use this with Vagrant, you can package it up as a box. However, I'm currently running into a few issues with it:
 
-- SSH is not set up for Vagrant's default public key https://superuser.com/a/591651
-- Interface names change (ex: from ens3 to ens5), so netplan doesn't bring the right interface or interfaces up
-
-Get [create_box.sh](https://raw.githubusercontent.com/vagrant-libvirt/vagrant-libvirt/master/tools/create_box.sh) from the libvirt repo.
-
-cd to the output-qemu folder and run:
+After building the box, run
 
 ```
-curl -Lo create_box.sh https://raw.githubusercontent.com/vagrant-libvirt/vagrant-libvirt/master/tools/create_box.sh
-chmod +x ./create_box.sh
-./create_box.sh  ubuntu1804
-vagrant box add ubuntu1804.box --name github-runner-ubuntu1804
+vagrant box add --name github-ve-ubuntu1804 box/libvirt/github-ve-ubuntu1804.box
 ```
 
 Now create the VM
@@ -57,7 +48,7 @@ Now create the VM
 ```
 mkdir ~/github-runner
 cd ~/github-runner
-vagrant init --box=github-runner-ubuntu1804
+vagrant init --box=github-ve-ubuntu1804
 # edit your Vagrantfile as you see fit
 vagrant up
 ```

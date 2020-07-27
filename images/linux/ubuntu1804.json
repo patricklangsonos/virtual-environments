@@ -299,6 +299,12 @@
         },
         {
             "type": "shell",
+            "scripts": [
+                "{{template_dir}}/scripts/installers/vagrant-prep.sh"
+            ]
+        },
+        {
+            "type": "shell",
             "expect_disconnect": true,
             "scripts": [
                 "{{template_dir}}/scripts/base/reboot.sh"

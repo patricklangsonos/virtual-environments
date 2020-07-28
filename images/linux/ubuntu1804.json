@@ -301,7 +301,8 @@
             "type": "shell",
             "scripts": [
                 "{{template_dir}}/scripts/installers/vagrant-prep.sh"
-            ]
+            ],
+            "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
         },
         {
             "type": "shell",

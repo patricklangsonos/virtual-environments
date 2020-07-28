@@ -62,7 +62,7 @@ The following software is installed on machines with the dev update.
 - Swift version 5.2.4 (swift-5.2.4-RELEASE)
 Target: x86_64-unknown-linux-gnu
 - CMake (cmake version 3.17.0)
-- Podman (2.0.2)
+- Podman (2.0.3)
 - Buildah (1.14.9)
 - Skopeo (1.1.0)
 - Docker Compose (docker-compose version 1.26.2, build eefe0d31)
@@ -137,7 +137,7 @@ Target: x86_64-unknown-linux-gnu
 - Git Large File Storage (LFS) (2.11.0)
 - Git-ftp (1.3.1)
 - GitHub CLI 0.11.0
-- Google Chrome (Google Chrome 84.0.4147.89 )
+- Google Chrome (Google Chrome 84.0.4147.105 )
 - ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}); Chrome Driver is available via CHROMEWEBDRIVER environment variable
 - HHVM (HipHop VM 4.67.0 (rel))
 - ImageMagick
@@ -162,10 +162,10 @@ Target: x86_64-unknown-linux-gnu
 - Grunt (grunt-cli v1.3.2)
 - Gulp (CLI version: 2.3.0
 Local version: Unknown)
-- n (6.6.0)
+- n (6.7.0)
 - Parcel (1.12.4)
 - TypeScript (Version 3.9.7)
-- Webpack (4.43.0)
+- Webpack (4.44.0)
 - Webpack CLI (3.3.12)
 - Yarn (1.22.4)
 - Newman (5.1.2)
@@ -255,13 +255,13 @@ Local version: Unknown)
 - Android SDK Build-Tools 17.0.0
 - Android NDK 21.3.6528147
 - Cached container images
-  - buildpack-deps:stretch (Digest: sha256:fddd0881546405f75428a50ad1e95c359dd8a08cbc1fb8314c1d9f4f37fa0c89)
+  - node:10 (Digest: sha256:45ce6645bb55155699292c9f8f203203a77b05fb90b65dd29b7bf91ec4c9e168)
+  - node:12 (Digest: sha256:d06fdb39d49bd3be77a4523fe763a868218b82a36562575d6a1ca7863354807b)
+  - buildpack-deps:stretch (Digest: sha256:d95db8b9293c71d0f9b6a12d96d1ace65af81fd6535e5cb07078df85b3147a76)
   - debian:9 (Digest: sha256:e984d8384d582e61f128920ec63c18a46bb23bc67d7c29a8311a44a69077edab)
   - debian:8 (Digest: sha256:dfc9cc982d07c28c2513ad4a97330b38485c0cceea4bd8b217c39d32423e4d29)
   - node:10-alpine (Digest: sha256:2f202af4d6baba655fef9c93f41a914b33ee576b9f55a6e69ba23b49e3b62766)
-  - node:10 (Digest: sha256:a2669574c5bb6b1be7bb50eb291dee95de544f94e20c8f74802a7d3497f31fbc)
   - node:12-alpine (Digest: sha256:1660c1b9d3fd9711eb9936e66d4656954cd14b0d2b23a2185c39587dad0239b4)
-  - node:12 (Digest: sha256:a1c7091dfeb05859d9b46ce0306ba72a248dba57a794a4472da09fea49cb7227)
   - jekyll/builder:latest (Digest: sha256:98cda359955f25f18c4bcc78536cdfd30e7ded689b1f52fcd513c75cbe4e751e)
   - alpine:3.9 (Digest: sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011)
   - alpine:3.10 (Digest: sha256:f0e9534a598e501320957059cb2a23774b4d4072e37c7b2cf7e95b241f019e35)
@@ -285,7 +285,7 @@ Local version: Unknown)
 - node:
   - node 8.17.0
   - node 10.22.0
-  - node 12.18.2
+  - node 12.18.3
   - node 14.6.0
 - go:
   - go 1.11.13
